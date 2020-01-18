@@ -1,9 +1,15 @@
 package main
 
 import (
-	"github.com/vfn2002/fdt-response/api"
+	"log"
+	"github.com/vfn2002/hdt-response/api"
+	"github.com/vfn2002/hdt-response/database"
 )
 
 func main() {
-	api.GetResponses()
+	log.Println("Connecting")
+	c := database.Connect("mongodb://mongodb:27017")
+	log.Println("Connected")
+
+	api.Init(c)
 }
