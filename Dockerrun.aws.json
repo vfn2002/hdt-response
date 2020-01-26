@@ -19,16 +19,12 @@
     {
       "name": "mongo",
       "image": "mongo",
-      "essential": true,
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 80,
-          "containerPort": 80
+          "hostPort": 27017,
+          "containerPort": 27017
         }
-      ],
-      "links": [
-        "api"
       ]
     }
   ]
