@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "victornielsen/hdt-response",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 1323,
+          "containerPort": 1323
+        }
+      ],
+      "links": [
+        "mongo"
+      ]
+    },
+    {
+      "name": "mongo",
+      "image": "mongo",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "api"
+      ]
+    }
+  ]
+}

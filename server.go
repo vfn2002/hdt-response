@@ -8,7 +8,7 @@ import (
 
 func main() {
 	log.Println("Connecting")
-	c := database.Connect("mongodb://mongodb:27017")
+	c := database.Connect("mongodb://localhost:27017")
 	log.Println("Connected")
 
 	api.Init(c)
