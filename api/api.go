@@ -16,7 +16,7 @@ func Init(c *mongo.Client) {
 
 	e.Use(middleware.Logger())
 
-	g := e.Group(version)
+	g := e.Group(versin)
 
 	InitRoutes(g, c)
 
