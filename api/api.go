@@ -1,9 +1,9 @@
 package api
 
 import (
-	"go.mongodb.org/mongo-driver/mongo"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 const (
@@ -16,7 +16,7 @@ func Init(c *mongo.Client) {
 
 	e.Use(middleware.Logger())
 
-	g := e.Group(versin)
+	g := e.Group(version)
 
 	InitRoutes(g, c)
 
