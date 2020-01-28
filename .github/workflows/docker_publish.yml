@@ -15,7 +15,7 @@ jobs:
         uses: manusa/actions-publish-docker@v1.0.1
         with:
           # Name of the Docker image
-          name: victornielsen/hdt-response
+          name: ${{ secrets.DOCKER_LOGIN }}/hdt-response
           # Username for Docker registry
           username: ${{ secrets.DOCKER_LOGIN }}
           # Password for Docker registry
