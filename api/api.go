@@ -1,9 +1,9 @@
 package api
 
 import (
-	"go.mongodb.org/mongo-driver/mongo"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 const (
