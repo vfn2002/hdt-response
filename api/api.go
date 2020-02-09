@@ -1,9 +1,9 @@
 package api
 
 import (
+	"database/sql"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"go.mongodb.org/mongo-driver/mongo"
 )
 
 const (
@@ -11,14 +11,14 @@ const (
 )
 
 // Init sets up api for service
-func Init(c *mongo.Client) {
+func Init(db *sql.DB) {
 	e := echo.New()
 
 	e.Use(middleware.Logger())
 
 	g := e.Group(version)
 
-	InitRoutes(g, c)
+	InitRoutes(g, db)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
